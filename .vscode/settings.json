@@ -1,0 +1,7 @@
+{
+    "files.associations": {
+        "sl_simple_button_instances.h": "c",
+        "app_assert.h": "c",
+        "em_common.h": "c"
+    }
+}
