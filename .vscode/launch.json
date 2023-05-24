@@ -1,0 +1,43 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "cwd": "${workspaceRoot}",
+            "executable": "./build/bt_soc_blinky.elf",
+            "name": "Debug STLink",
+            "request": "launch",
+            "type": "cortex-debug",
+            "servertype": "stlink",
+            "preLaunchTask": "Build Project",
+            "stlinkPath": "C:/ST/STM32CubeIDE_1.12.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.stlink-gdb-server.win32_2.0.500.202301161003/tools/bin/ST-LINK_gdbserver.exe",
+            "stm32cubeprogrammer": "C:/ST/STM32CubeIDE_1.12.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.cubeprogrammer.win32_2.0.600.202301161003/tools/bin",
+            "armToolchainPath": "C:/Program Files (x86)/GNU Arm Embedded Toolchain/10 2021.10/bin",
+            "device": "STM32F76x",
+            "interface": "swd",
+            //"serialNumber": "", // if Multiple Debuggers attached
+            "runToEntryPoint": "main",
+            //"showDevDebugOutput": "raw",
+            "svdFile": "${workspaceRoot}/svd/STM32F7x9.svd",
+        },
+        {
+            "cwd": "${workspaceRoot}",
+            "executable": "./build/bt_soc_blinky.elf",
+            "name": "Debug OpenOCD",
+            "request": "launch",
+            "type": "cortex-debug",
+            "servertype": "openocd",
+            "preLaunchTask": "Build Project",
+            "device": "stlink",
+            "configFiles": [
+                "interface/stlink.cfg",
+                "target/stm32f7x.cfg"
+            ],
+            "armToolchainPath": "C:/Program Files (x86)/GNU Arm Embedded Toolchain/10 2021.10/bin",
+            //"interface": "swd",
+            //"serialNumber": "", // if Multiple Debuggers attached
+            "runToEntryPoint": "main",
+            //"showDevDebugOutput": "raw",
+            "svdFile": "${workspaceRoot}/svd/STM32F7x9.svd",
+        }        
+    ]
+}
