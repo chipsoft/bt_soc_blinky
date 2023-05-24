@@ -29,8 +29,8 @@ endif
 
 SOURCE_DIR = .
 COMMON_LIB_DIR = ../app_libs
-# GECKO_SDK = /Users/denissuprunenko/SimplicityStudio/SDKs/gecko_sdk
-GECKO_SDK = C:/Users/dSuprunenko/repos/gecko_sdk
+GECKO_SDK = /Users/denissuprunenko/SimplicityStudio/SDKs/gecko_sdk
+# GECKO_SDK = C:/Users/dSuprunenko/repos/gecko_sdk
 
 CPU_OPTIONS = -mcpu=cortex-m33 -mthumb -mfpu=fpv5-sp-d16 -mfloat-abi=hard
 C_STANDARD = -std=c99
