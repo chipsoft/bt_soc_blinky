@@ -27,11 +27,10 @@ else
 	OBJSIZE = arm-none-eabi-size
 endif
 
-# arm-none-eabi-gcc  -MMD -MP -MF"gecko_sdk_4.2.3/util/third_party/mbedtls/library/platform.d" -MT"gecko_sdk_4.2.3/util/third_party/mbedtls/library/platform.o" -o "gecko_sdk_4.2.3/util/third_party/mbedtls/library/platform.o" $(GECKO_SDK)util/third_party/mbedtls/library/platform.c"
-
 SOURCE_DIR = .
 COMMON_LIB_DIR = ../app_libs
-GECKO_SDK = /Users/denissuprunenko/SimplicityStudio/SDKs/gecko_sdk
+# GECKO_SDK = /Users/denissuprunenko/SimplicityStudio/SDKs/gecko_sdk
+GECKO_SDK = C:/Users/dSuprunenko/repos/gecko_sdk
 
 CPU_OPTIONS = -mcpu=cortex-m33 -mthumb -mfpu=fpv5-sp-d16 -mfloat-abi=hard
 C_STANDARD = -std=c99
@@ -281,8 +280,6 @@ $(SOURCE_DIR)/app.c \
 $(SOURCE_DIR)/main.c \
 $(SOURCE_DIR)/sl_gatt_service_device_information.c \
 
-#$(GECKO_SDK)/util/third_party/mbedtls/library/platform.c
-
 CPPFILES =
 
 SOURCE_DIRS := $(dir $(CFILES))
@@ -330,12 +327,12 @@ endif
 
 $(OUTPUT_FILE_PATH): $(OBJ_FILES)
 	$(info Building target: $@)
-	@$(CPP_COMPILER) -o$(OUTPUT_FILE_PATH) $(OBJ_FILES) $(LIBS) $(CPU_OPTIONS) -Wl,-Map=$(BUILD_DIR)/$(PROJECT).map $(CPU_OPTIONS) --specs=nano.specs -Wl,--start-group -lm -Wl,--end-group -L$(SOURCE_DIR)/hw/mcu/$(MCU_NAME) -Wl,--gc-sections -fdata-sections -ffunction-sections -T$(LD_SCRIPT) -fno-exceptions -fno-rtti -Xlinker -Map=$(BUILD_DIR)/$(PROJECT).map
+	@$(CPP_COMPILER) -g3 -gdwarf-2 $(CPU_OPTIONS) -T $(LD_SCRIPT) -Xlinker --gc-sections -Xlinker -Map=$(BUILD_DIR)/$(PROJECT).map --specs=nano.specs -o $(OUTPUT_FILE_PATH) -Wl,--start-group $(OBJ_FILES) $(LIBS) -Wl,--end-group
 	$(info Finished building target: $@)
 	@$(OBJCOPY) -O binary $(OUTPUT_FILE_PATH) $(BUILD_DIR)/$(PROJECT).bin
 	@$(OBJCOPY) -h -S $(OUTPUT_FILE_PATH) > $(BUILD_DIR)/$(PROJECT).lss
 	@$(OBJSIZE) $(OUTPUT_FILE_PATH)
-	
+
 # Other Targets
 clean:
 	$(info $(C_FILENAMES))
