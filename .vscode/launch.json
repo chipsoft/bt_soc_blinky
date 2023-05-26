@@ -51,7 +51,7 @@
             "device": "EFR32MG22CXXXF512",
             "interface": "swd",
             "serialNumber": "", //If you have more than one J-Link probe, add the serial number here.
-            //"jlinkscript":"${workspaceRoot}/BSP/SEGGER/K66FN2M0_emPower/Setup/Kinetis_K66_Target.js",
+            "jlinkscript":"${workspaceRoot}/misc/jlink-script/EFR32MG22CXXXF512_Target.js",
             "runToEntryPoint": "main",
             "svdFile": "${workspaceRoot}/SVD/EFR32MG22C224F512IM40.svd" 
         }

@@ -8,9 +8,6 @@ BUILD_DIR = build
 OBJ_SUBDIR = obj
 OUTPUT_FILE_PATH := $(BUILD_DIR)/$(PROJECT).elf
 
-BOARD_NAME = canbed_m4
-MCU_NAME = atsame51g19a
-
 ifeq ($(OS),Windows_NT)
 #	WINDOWS_TOOLCHAIN_PATH = "C:/Program Files (x86)/Atmel/Studio/7.0/toolchain/arm/arm-gnu-toolchain/bin"
 	WINDOWS_TOOLCHAIN_PATH = "C:/Program Files (x86)/GNU Arm Embedded Toolchain/10 2021.10/bin"
