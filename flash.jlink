@@ -1,0 +1,9 @@
+si 1
+speed 4000
+device EFR32MG22CXXXF512
+connect
+erase
+loadfile ./build/bt_soc_blinky.bin
+r
+g
+q

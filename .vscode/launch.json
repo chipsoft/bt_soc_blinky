@@ -44,7 +44,7 @@
             "request": "launch",
             "name": "Debug J-Link",
             "cwd": "${workspaceRoot}",
-            "preLaunchTask": "Build Project",
+            "preLaunchTask": "Build and Flash",
             "executable": "./build/bt_soc_blinky.elf",
             "serverpath": "/Applications/SEGGER/JLink/JLinkGDBServerCLExe", 
             "servertype": "jlink",
@@ -53,6 +53,7 @@
             "serialNumber": "", //If you have more than one J-Link probe, add the serial number here.
             "jlinkscript":"${workspaceRoot}/misc/jlink-script/EFR32MG22CXXXF512_Target.js",
             "runToEntryPoint": "main",
+            // "showDevDebugOutput": "raw",
             "svdFile": "${workspaceRoot}/SVD/EFR32MG22C224F512IM40.svd" 
         }
     ]
